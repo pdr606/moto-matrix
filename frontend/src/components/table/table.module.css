@@ -1,0 +1,18 @@
+.table__container {
+  margin: 40px;
+  width: 70%;
+}
+
+.table__header {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #005c53;
+  color: white;
+  border: #005c53;
+}
+
+.table__text {
+  font-weight: 600;
+  padding: 8px 4px;
+}

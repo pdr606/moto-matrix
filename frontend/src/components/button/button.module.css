@@ -1,0 +1,18 @@
+.button__box {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.button__primary {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background-color: #005c53;
+  cursor: pointer;
+  color: #fafafa;
+  font-size: 20px;
+}
+.button__primary:hover {
+  background-color: #042940;
+}

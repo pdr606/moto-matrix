@@ -1,0 +1,10 @@
+com\example\modelvehicles\models\Vehicle.class
+com\example\modelvehicles\services\VehicleService.class
+com\example\modelvehicles\services\VehicleServiceImp.class
+com\example\modelvehicles\controller\VehicleController.class
+com\example\modelvehicles\dto\VehicleDto$VehicleDtoBuilder.class
+com\example\modelvehicles\dto\VehicleDto.class
+com\example\modelvehicles\models\Vehicle$VehicleBuilder.class
+com\example\modelvehicles\ModelVehiclesApplication.class
+com\example\modelvehicles\services\CrudService.class
+com\example\modelvehicles\repository\VehicleRepository.class

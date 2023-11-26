@@ -1,0 +1,11 @@
+services:
+  app:
+    image: "moto-matrix:latest"
+    container_name: moto-matrix
+    build:
+      context: .
+    ports:
+      - '8080:8080'
+
+volumes:
+  volumes:

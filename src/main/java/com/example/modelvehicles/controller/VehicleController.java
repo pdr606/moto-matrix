@@ -4,8 +4,10 @@ package com.example.modelvehicles.controller;
 import com.example.modelvehicles.dto.VehicleDto;
 import com.example.modelvehicles.services.VehicleService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.*;
 import java.util.List;
 
 @RestController
@@ -15,7 +17,7 @@ import java.util.List;
 public class VehicleController {
     private final VehicleService vehicleService;
 
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public void create(@RequestBody VehicleDto vehicleDto){
         vehicleService.create(vehicleDto);
     }
@@ -25,7 +27,6 @@ public class VehicleController {
         return vehicleService.findAll();
     }
 
-    @DeleteMapping("/{ìd}")
     public void delete(@PathVariable Long id){
         vehicleService.delete(id);
     }

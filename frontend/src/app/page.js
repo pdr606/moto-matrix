@@ -29,6 +29,10 @@ export default function Home() {
     setVehicles(data);
   };
 
+  useEffect(() => {
+    handleRefresh();
+  }, []);
+
   return (
     <main className={S.main}>
       <div className={S.nav}>

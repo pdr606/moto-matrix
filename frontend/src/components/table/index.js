@@ -6,7 +6,6 @@ export function Table({ vehicles }) {
       <thead className={S.table__header}>
         <tr>
           <th className={S.table__text}>Nome</th>
-          <th className={S.table__text}>Data do registro</th>
           <th className={S.table__text}>Modelo</th>
           <th className={S.table__text}>Placa</th>
         </tr>
@@ -15,8 +14,7 @@ export function Table({ vehicles }) {
         {vehicles &&
           vehicles.map((vehicle, index) => (
             <tr key={index}>
-              <td className={S.table__text}>{vehicle.name}</td>
-              <td className={S.table__text}>{vehicle.registryDate}</td>
+              <td className={S.table__text}>{vehicle.employee}</td>
               <td className={S.table__text}>{vehicle.model}</td>
               <td className={S.table__text}>{vehicle.plate}</td>
             </tr>

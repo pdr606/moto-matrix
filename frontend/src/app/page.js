@@ -12,24 +12,22 @@ export default function Home() {
   const handleSave = async (vehicle) => {
     await fetch('http://localhost:8080/api/v1/vehicle', {
       method: 'POST',
-      body: {
-        model: 'CAR',
-        plate: '1',
-        employee: 'José',
-      },
+      body: JSON.stringify(vehicle),
       headers: {
         'Content-Type': 'application/json',
       },
-    });
+    })
+      .then(() => handleRefresh())
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  useEffect(() => {
-    fetch('http://localhost:8080/api/v1/vehicle', {
-      mode: 'no-cors',
-    }).then((response) => {
-      console.log(response);
-    });
-  }, []);
+  const handleRefresh = async () => {
+    const response = await fetch('http://localhost:8080/api/v1/vehicle');
+    const data = await response.json();
+    setVehicles(data);
+  };
 
   return (
     <main className={S.main}>

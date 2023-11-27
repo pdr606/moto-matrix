@@ -5,7 +5,7 @@ import { Button } from '../button';
 
 import S from './form.module.css';
 
-export function Form({ handleSave }) {
+export const Form = () => {
   const [formData, setFormData] = useState({
     employee: '',
     model: '',
@@ -17,6 +17,20 @@ export function Form({ handleSave }) {
       ...oldValue,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleSave = async (vehicle) => {
+    await fetch('http://localhost:8080/api/v1/vehicle', {
+      method: 'POST',
+      body: JSON.stringify(vehicle),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(() => handleRefresh())
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -55,4 +69,4 @@ export function Form({ handleSave }) {
       </div>
     </div>
   );
-}
+};
